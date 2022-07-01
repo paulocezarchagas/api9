@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Cliente;
 use App\Models\Departamento;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Controller; 
 
 class DepartamentoController extends Controller 
 {
@@ -30,6 +30,7 @@ class DepartamentoController extends Controller
         return Departamento::findOrFail($id);
     }
 
+
     public function search($nome){
         return Departamento::where('nome', 'like', '%'.$nome.'%')->get(); 
     }
@@ -47,14 +48,11 @@ class DepartamentoController extends Controller
         }
     }
 
-
-
     
     public function destroy($id)
     {
         return Departamento::destroy($id); 
     }
-
 
 
 }
